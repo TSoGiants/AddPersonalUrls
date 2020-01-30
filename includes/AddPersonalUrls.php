@@ -142,20 +142,21 @@ class AddPersonalUrls {
 		if ( $user->getID() ) {
 			$pageurl = $title->getLocalURL();
 			
-			if( in_array('edit', $user->getRights()) ) {
-				$urls = [ 'userpage' => array_shift( $personal_urls ), 'talkpage' => array_shift( $personal_urls )];
-			} else {
-				$urls = [];
-				
-				array_shift( $personal_urls );
-				array_shift( $personal_urls );
+			if( !in_array('edit', $user->getRights()) ) {
+				unset( $personal_urls['userpage'] );
+			
+			} 
+			
+			if (!in_array( 'talk', $user->getRights())) {
+				unset( $personal_urls['talkpage']);
+			}
+			
+			if( !in_array('edit', $user->getRights()) && !in_array( 'talk', $user->getRights())) {
 				unset( $personal_urls['mycontris'] );
 			}
-
 			
-
 			/** Prepend new URLs to existing ones. */
-			$personal_urls = $urls + $personal_urls;
+			//$personal_urls = $urls + $personal_urls;
 			
 		} 
 		
