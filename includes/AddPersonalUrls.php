@@ -155,6 +155,7 @@ class AddPersonalUrls {
 			$active = ( isset( $class ) && $class == 'new' )
 				? $linkedTitle->getLocalURL() == $pageurl
 				: $href == $pageurl;
+			$urls = [compact( 'text', 'href', 'active', 'class' )];
 
 
 			/** Prepend new URLs to existing ones. */
