@@ -156,16 +156,15 @@ class AddPersonalUrls {
 			$active = $href == $pageurl;
 			$urls["dashboard"] = compact( 'text', 'href', 'alt', 'active', 'class' );
 
-			$js_code = 'console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
-');';
-
-
-			$js_code = '<script>' . $js_code . '</script>';
-
-			echo $js_code;
+			echo '<script>console.log(' . json_encode($pageurl, JSON_HEX_TAG) . 
+');</script>';
+			echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
+');</script>';
 			
 			/** Prepend new URLs to existing ones. */
 			$personal_urls = $urls + $personal_urls;
+			echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
+');</script>';
 		}
 
 		return true;
