@@ -141,9 +141,8 @@ class AddPersonalUrls {
 		/** Consider logged-in users only. */
 		if ( $user->getID() ) {
 			$pageurl = $title->getLocalURL();
-			echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . 
-');</script>';
-			if( $user->getRights().includes('edit') ) {
+			
+			if( in_array('edit', $user->getRights()) ) {
 				$urls = [ 'userpage' => array_shift( $personal_urls ) ];
 			} else {
 				$urls = [];
