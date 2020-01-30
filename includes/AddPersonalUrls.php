@@ -155,7 +155,8 @@ class AddPersonalUrls {
 			$alt = "This is a test.";
 			$active = $href == $pageurl;
 			$urls["dashboard"] = compact( 'text', 'href', 'alt', 'active', 'class' );
-
+			echo '<script>console.log(' . json_encode($href, JSON_HEX_TAG) . 
+');</script>';
 			echo '<script>console.log(' . json_encode($pageurl, JSON_HEX_TAG) . 
 ');</script>';
 			echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
