@@ -158,7 +158,7 @@ class AddPersonalUrls {
 			
 		}
 		
-		echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
+		echo '<script>console.log(' . json_encode($personal_urls['login'], JSON_HEX_TAG) . 
 ');</script>';
 
 		return true;
