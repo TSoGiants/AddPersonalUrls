@@ -149,6 +149,7 @@ class AddPersonalUrls {
 				
 				array_shift( $personal_urls );
 				array_shift( $personal_urls );
+				unset( $personal_urls['contributions'] )
 			}
 
 			
@@ -157,9 +158,6 @@ class AddPersonalUrls {
 			$personal_urls = $urls + $personal_urls;
 			
 		}
-		
-		echo '<script>console.log(' . json_encode($personal_urls['login'], JSON_HEX_TAG) . 
-');</script>';
 
 		return true;
 	}
