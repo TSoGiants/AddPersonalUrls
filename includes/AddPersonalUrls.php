@@ -143,12 +143,14 @@ class AddPersonalUrls {
 			$pageurl = $title->getLocalURL();
 			echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . 
 ');</script>';
+			if( $user->getRights().includes('edit') {
+				$urls = [ 'userpage' => array_shift( $personal_urls ) ];
+			} else {
+				$urls = [];
+				
+				array_shift( $personal_urls );
+			}
 
-			/** Extract link to user page in order to keep it as first
-			 *	item.
-			 */
-			$urls = [];
-			array_shift( $personal_urls );
 			array_shift( $personal_urls );
 
 
