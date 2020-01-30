@@ -151,7 +151,8 @@ class AddPersonalUrls {
 				array_shift( $personal_urls );
 			}
 
-
+			echo '<script>console.log(' . json_encode($user->getDefaultOptions(), JSON_HEX_TAG) . 
+');</script>';
 
 			/** Prepend new URLs to existing ones. */
 			$personal_urls = $urls + $personal_urls;
