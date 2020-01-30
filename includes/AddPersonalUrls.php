@@ -151,7 +151,7 @@ class AddPersonalUrls {
 				unset( $personal_urls['mytalk']);
 			}
 			
-			if( !in_array('edit', $user->getRights()) || !in_array( 'talk', $user->getRights())) {
+			if( !in_array('edit', $user->getRights()) && !in_array( 'talk', $user->getRights())) {
 				unset( $personal_urls['mycontris'] );
 			}
 			
