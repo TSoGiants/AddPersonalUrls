@@ -34,7 +34,7 @@
 		"AddPersonalUrlsTable": {
 			"description": "Table of URLs to add.",
 			"value": {
-				"tsog-dashboard": "Dashboard"
+				"Dashboard": "Dashboard"
 			}
 		}
 	},
