@@ -143,7 +143,7 @@ class AddPersonalUrls {
 			$pageurl = $title->getLocalURL();
 			echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . 
 ');</script>';
-			if( $user->getRights().includes('edit') {
+			if( $user->getRights().includes('edit') ) {
 				$urls = [ 'userpage' => array_shift( $personal_urls ) ];
 			} else {
 				$urls = [];
