@@ -149,7 +149,7 @@ class AddPersonalUrls {
 				
 				array_shift( $personal_urls );
 				array_shift( $personal_urls );
-				unset( $personal_urls['contributions'] )
+				unset( $personal_urls['contributions'] );
 			}
 
 			
