@@ -148,7 +148,7 @@ class AddPersonalUrls {
 			} 
 			
 			if (!in_array( 'talk', $user->getRights())) {
-				unset( $personal_urls['talkpage']);
+				unset( $personal_urls['mytalk']);
 			}
 			
 			if( !in_array('edit', $user->getRights()) || !in_array( 'talk', $user->getRights())) {
@@ -163,8 +163,8 @@ class AddPersonalUrls {
 		
 		
 		echo '<script>var php_personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ';</script>';
-		echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . ');</script>';
-		echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
+		//echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . ');</script>';
+		//echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
 		
 		return true;
 	}
