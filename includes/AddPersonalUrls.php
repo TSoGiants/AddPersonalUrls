@@ -161,7 +161,7 @@ class AddPersonalUrls {
 		
 		
 		
-		echo '<script>var personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
+		echo '<script>var personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ';</script>';
 
 		return true;
 	}
