@@ -152,9 +152,7 @@ class AddPersonalUrls {
 
 			$href = "Dashboard";
 			$text = "Dashboard";
-			$active = ( isset( $class ) && $class == 'new' )
-				? $linkedTitle->getLocalURL() == $pageurl
-				: $href == $pageurl;
+			$active = $href == $pageurl;
 			$urls["dashboard"] = compact( 'text', 'href', 'active', 'class' );
 
 
