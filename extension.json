@@ -31,12 +31,7 @@
 		]
 	},
 	"config": {
-		"AddPersonalUrlsTable": {
-			"description": "Table of URLs to add.",
-			"value": {
-				"tsog-dashboard": "Dashboard"
-			}
-		}
+
 	},
 	"manifest_version": 2
 }
