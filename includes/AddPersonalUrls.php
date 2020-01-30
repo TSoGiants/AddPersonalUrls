@@ -199,7 +199,7 @@ class AddPersonalUrls {
 			}
 
 			/** Prepend new URLs to existing ones. */
-			$personal_urls = $personal_urls;
+			//$personal_urls = $personal_urls;
 		}
 
 		return true;
