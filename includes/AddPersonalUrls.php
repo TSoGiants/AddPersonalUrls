@@ -149,18 +149,13 @@ class AddPersonalUrls {
 			array_shift( $personal_urls );
 			array_shift( $personal_urls );
 
-			//foreach ( $wgAddPersonalUrlsTable as $id => $url ) {
 
+			$href = "Dashboard";
+			$text = "Dashboard";
+			$active = ( isset( $class ) && $class == 'new' )
+				? $linkedTitle->getLocalURL() == $pageurl
+				: $href == $pageurl;
 
-					$href = "Dashboard";
-					$text = "Dashboard";
-					$active = $linkedTitle->getLocalURL() == $pageurl
-						: $href == $pageurl;
-			//	}
-
-			//	$text = wfMessage( $id )->text();
-				$urls[$id] = compact( 'text', 'href', 'active' );
-			//}
 
 			/** Prepend new URLs to existing ones. */
 			$personal_urls = $urls + $personal_urls;
