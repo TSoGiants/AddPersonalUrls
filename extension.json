@@ -34,11 +34,7 @@
 		"AddPersonalUrlsTable": {
 			"description": "Table of URLs to add.",
 			"value": {
-				"addpersonalurls-userpages": "Special:PrefixIndex?prefix=$username/&namespace=2",
-				"addpersonalurls-home": "Special:Mypage/Home",
-				"addpersonalurls-favorites": "Special:Mypage/Favorites",
-				"addpersonalurls-sandbox": "Special:Mypage/Sandbox",
-				"addpersonalurls-notes": "Special:Mypage/Notes"
+				"tsog-dashboard": "Dashboard"
 			}
 		}
 	},
