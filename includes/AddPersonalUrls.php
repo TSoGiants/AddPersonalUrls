@@ -146,6 +146,7 @@ class AddPersonalUrls {
 			 *	item.
 			 */
 			$urls = [ 'userpage' => array_shift( $personal_urls ) ];
+			array_shift( $personal_urls);
 
 			foreach ( $wgAddPersonalUrlsTable as $id => $url ) {
 				/** Ignore items were the target is unset. This allows
@@ -198,7 +199,7 @@ class AddPersonalUrls {
 			}
 
 			/** Prepend new URLs to existing ones. */
-			$personal_urls = $urls + $personal_urls;
+			$personal_urls = $personal_urls;
 		}
 
 		return true;
