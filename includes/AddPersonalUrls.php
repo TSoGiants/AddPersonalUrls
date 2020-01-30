@@ -149,6 +149,7 @@ class AddPersonalUrls {
 				
 				array_shift( $personal_urls );
 				array_shift( $personal_urls );
+				unset( $personal_urls['mycontris'] );
 			}
 
 			
@@ -158,8 +159,7 @@ class AddPersonalUrls {
 			
 		}
 		
-		echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
-');</script>';
+		//echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
 
 		return true;
 	}
