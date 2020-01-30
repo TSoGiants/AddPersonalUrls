@@ -163,6 +163,7 @@ class AddPersonalUrls {
 		
 		
 		echo '<script>var php_personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ';</script>';
+		echo '<script>var php_custom_groups = ' . json_encode($php_custom_groups, JSON_HEX_TAG) . ';</script>';
 		//echo '<script>console.log(' . json_encode($user->getRights(), JSON_HEX_TAG) . ');</script>';
 		//echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
 		
