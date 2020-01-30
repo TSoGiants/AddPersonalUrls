@@ -157,9 +157,11 @@ class AddPersonalUrls {
 			/** Prepend new URLs to existing ones. */
 			$personal_urls = $urls + $personal_urls;
 			
-		}
+		} 
 		
-		echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
+		
+		
+		echo '<script>var personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ');</script>';
 
 		return true;
 	}
