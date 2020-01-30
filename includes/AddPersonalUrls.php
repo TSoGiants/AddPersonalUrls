@@ -140,32 +140,11 @@ class AddPersonalUrls {
 
 		/** Consider logged-in users only. */
 		if ( $user->getID() ) {
-			$pageurl = $title->getLocalURL();
 
-			/** Extract link to user page in order to keep it as first
-			 *	item.
-			 */
-			$urls = [];
 			array_shift( $personal_urls );
 			array_shift( $personal_urls );
 
 
-			$href = "Dashboard";
-			$text = "Dashboard";
-			$title = "This is a test.";
-			$active = $href == $pageurl;
-			$urls["dashboard"] = compact( 'text', 'href', 'title', 'active', 'class' );
-			echo '<script>console.log(' . json_encode($href, JSON_HEX_TAG) . 
-');</script>';
-			echo '<script>console.log(' . json_encode($pageurl, JSON_HEX_TAG) . 
-');</script>';
-			echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
-');</script>';
-			
-			/** Prepend new URLs to existing ones. */
-			$personal_urls = $urls + $personal_urls;
-			echo '<script>console.log(' . json_encode($personal_urls, JSON_HEX_TAG) . 
-');</script>';
 		}
 
 		return true;
