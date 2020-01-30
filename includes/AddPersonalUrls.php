@@ -149,11 +149,55 @@ class AddPersonalUrls {
 			array_shift( $personal_urls );
 			array_shift( $personal_urls );
 
-			
-			$text = "Dashboard";
-			$href = "Dashboard";
-			$urls[$id] = compact( 'text', 'href', 'active', 'class' );
-			
+			foreach ( $wgAddPersonalUrlsTable as $id => $url ) {
+				/** Ignore items were the target is unset. This allows
+				 * to remove in `LocalSettings.php` items defined in
+				 * extension.json.
+				 */
+				if ( !isset( $url ) ) {
+					continue;
+				}
+
+				/** Replace $username with actual username. */
+				$url = str_replace( '$username', $username, $url );
+
+				/** Setup URL details, distinguishing between internal
+				 *	and external links.
+				 */
+				if ( strpos( $url, '://' ) !== false ) {
+					$href = $url;
+					$class = 'external text';
+				} else {
+					/** Split the URL at '?', if any. */
+					$components = explode( '?', $url, 2 );
+					$name = $components[0];
+					$urlaction = isset( $components[1] )
+						? $components[1] : null;
+
+					$linkedTitle = Title::newFromText( $name );
+					Skin::checkTitle( $linkedTitle, $name );
+					$exists = $linkedTitle->getArticleID() != 0
+						|| $linkedTitle->isSpecialPage();
+
+					/** If a page does not exist and is not a special
+					 *	page, open it for editing and format it as a
+					 *	link to a new page.
+					 */
+					if ( !$exists ) {
+						$urlaction = 'action=edit';
+						$class = 'new';
+					}
+
+					$href = $linkedTitle->getLocalURL( $urlaction );
+
+					$active = ( isset( $class ) && $class == 'new' )
+						? $linkedTitle->getLocalURL() == $pageurl
+						: $href == $pageurl;
+				}
+
+				$text = wfMessage( $id )->text();
+				$urls[$id] = compact( 'text', 'href', 'active', 'class' );
+			}
 
 			/** Prepend new URLs to existing ones. */
 			$personal_urls = $urls + $personal_urls;
