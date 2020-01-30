@@ -163,7 +163,8 @@ class AddPersonalUrls {
 		
 		
 		echo '<script>var php_personal_urls = ' . json_encode($personal_urls, JSON_HEX_TAG) . ';</script>';
-
+		echo '<script>console.log(' . $user->getRights() . ');</script>';
+		
 		return true;
 	}
 }
