@@ -152,8 +152,9 @@ class AddPersonalUrls {
 
 			$href = "Dashboard";
 			$text = "Dashboard";
+			$alt = "This is a test.";
 			$active = $href == $pageurl;
-			$urls["dashboard"] = compact( 'text', 'href', 'active', 'class' );
+			$urls["dashboard"] = compact( 'text', 'href', 'alt', 'active', 'class' );
 
 
 			/** Prepend new URLs to existing ones. */
