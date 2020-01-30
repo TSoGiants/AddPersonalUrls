@@ -143,14 +143,14 @@ class AddPersonalUrls {
 			$pageurl = $title->getLocalURL();
 			
 			if( in_array('edit', $user->getRights()) ) {
-				$urls = [ 'userpage' => array_shift( $personal_urls ) ];
+				$urls = [ 'userpage' => array_shift( $personal_urls ), 'talkpage' => array_shift( $personal_urls )];
 			} else {
 				$urls = [];
 				
 				array_shift( $personal_urls );
+				array_shift( $personal_urls );
 			}
 
-			array_shift( $personal_urls );
 
 
 			/** Prepend new URLs to existing ones. */
